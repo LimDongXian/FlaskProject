@@ -22,7 +22,7 @@ def greet():
 
 
 # Celsius to Fahrenheit route
-@app.route('/convert/<celsius>')
+@app.route('/f/<celsius>')
 def convert_temperature(celsius):
     try:
         celsius_float = float(celsius)
@@ -33,4 +33,5 @@ def convert_temperature(celsius):
 
 
 if __name__ == '__main__':
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(debug=True)
